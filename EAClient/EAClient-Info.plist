@@ -24,6 +24,8 @@
 	<string>1.0</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>I would like to use your location.</string>
 	<key>UIMainStoryboardFile</key>
 	<string>EAClient</string>
 	<key>UIRequiredDeviceCapabilities</key>

@@ -30,6 +30,8 @@
 		94C3735319CEB5BF00D8D516 /* eaSplash.png in Resources */ = {isa = PBXBuildFile; fileRef = 94C3734E19CEB5BF00D8D516 /* eaSplash.png */; };
 		94C3735819CEB9FC00D8D516 /* eaSplash960.png in Resources */ = {isa = PBXBuildFile; fileRef = 94C3735619CEB9FC00D8D516 /* eaSplash960.png */; };
 		94C3735919CEB9FC00D8D516 /* eaSplash1136.png in Resources */ = {isa = PBXBuildFile; fileRef = 94C3735719CEB9FC00D8D516 /* eaSplash1136.png */; };
+		D011F30D1A1AF7F10002B013 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = D011F30C1A1AF7F10002B013 /* Location.m */; };
+		D011F30F1A1AFA6D0002B013 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D011F30E1A1AFA6D0002B013 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +73,9 @@
 		94C3734E19CEB5BF00D8D516 /* eaSplash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = eaSplash.png; sourceTree = "<group>"; };
 		94C3735619CEB9FC00D8D516 /* eaSplash960.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = eaSplash960.png; sourceTree = "<group>"; };
 		94C3735719CEB9FC00D8D516 /* eaSplash1136.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = eaSplash1136.png; sourceTree = "<group>"; };
+		D011F30B1A1AF7F10002B013 /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
+		D011F30C1A1AF7F10002B013 /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
+		D011F30E1A1AFA6D0002B013 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D011F30F1A1AFA6D0002B013 /* CoreLocation.framework in Frameworks */,
 				94C3730F19CE324A00D8D516 /* CoreGraphics.framework in Frameworks */,
 				94C3731319CE324A00D8D516 /* CoreData.framework in Frameworks */,
 				94C3731119CE324A00D8D516 /* UIKit.framework in Frameworks */,
@@ -122,6 +128,7 @@
 		94C3730B19CE324A00D8D516 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D011F30E1A1AFA6D0002B013 /* CoreLocation.framework */,
 				94C3730C19CE324A00D8D516 /* Foundation.framework */,
 				94C3730E19CE324A00D8D516 /* CoreGraphics.framework */,
 				94C3731019CE324A00D8D516 /* UIKit.framework */,
@@ -143,6 +150,8 @@
 				94C3734619CE368100D8D516 /* RegisterUserViewController.m */,
 				94C3734819CE3E5700D8D516 /* LoginViewController.h */,
 				94C3734919CE3E5700D8D516 /* LoginViewController.m */,
+				D011F30B1A1AF7F10002B013 /* Location.h */,
+				D011F30C1A1AF7F10002B013 /* Location.m */,
 				94C3731519CE324A00D8D516 /* Supporting Files */,
 			);
 			path = EAClient;
@@ -292,6 +301,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D011F30D1A1AF7F10002B013 /* Location.m in Sources */,
 				94C3732219CE324A00D8D516 /* EAClient.xcdatamodeld in Sources */,
 				94C3731B19CE324A00D8D516 /* main.m in Sources */,
 				94C3734719CE368100D8D516 /* RegisterUserViewController.m in Sources */,
@@ -493,6 +503,7 @@
 				94C3733D19CE324A00D8D516 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		94C3733E19CE324A00D8D516 /* Build configuration list for PBXNativeTarget "EAClientTests" */ = {
 			isa = XCConfigurationList;
@@ -501,6 +512,7 @@
 				94C3734019CE324A00D8D516 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
