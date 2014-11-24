@@ -26,6 +26,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+   
     // Do any additional setup after loading the view.
 }
 
@@ -34,12 +35,45 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+- (IBAction)LoginApp:(id)sender {
+    if([_UserName.text isEqualToString:@"test"] && [_PassWord.text isEqualToString:@"test"])
+    {
+        [self performSegueWithIdentifier:@"login" sender:self];
+        self.UserName.text = @"";
+        self.PassWord.text = @"";
+        //NSLog(@"yes");
+        
+    }else if([_UserName.text isEqualToString:@""] || [_PassWord.text isEqualToString:@""]){
+        UIAlertView *error = [[UIAlertView alloc] initWithTitle:@"Please input your Username or Password!" message:@"You must complete all fields" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+        [error show];
+        
+    }
+
+    
+    else{
+        UIAlertView *error = [[UIAlertView alloc] initWithTitle:@"Error!" message:@"Username or Password incorrect Please try again" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+        [error show];
+        
+    }
+
+}
+
+- (IBAction)LogIn:(id)sender {
+    
+    
+}
+
 - (IBAction)unwindToCancel:(UIStoryboardSegue *)segue{
     
 }
 
 - (IBAction)unwindToSave:(UIStoryboardSegue *)segue{
     
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+    [textField resignFirstResponder];
+    return YES;
 }
 
 /*

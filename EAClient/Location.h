@@ -28,5 +28,7 @@
 
 @property(nonatomic, retain) CLLocationManager *locationManager;
 
+- (IBAction)Outss:(id)sender;
+
 - (IBAction)getCurrentLocation:(id)sender;
 @end

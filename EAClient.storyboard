@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B23" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="sSO-qw-sde">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="sSO-qw-sde">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
@@ -17,17 +17,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eC9-4L-W92">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eC9-4L-W92">
                                 <rect key="frame" x="20" y="81" width="280" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="98q-KV-EeR" id="7hH-5F-Psv"/>
+                                </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pA2-i8-l7j">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="pA2-i8-l7j">
                                 <rect key="frame" x="20" y="119" width="280" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next" secureTextEntry="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="98q-KV-EeR" id="fBL-8b-ckm"/>
+                                </connections>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aaD-Qr-NXT">
+                                <rect key="frame" x="247" y="157" width="46" height="30"/>
+                                <state key="normal" title="Login">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="LoginApp:" destination="98q-KV-EeR" eventType="touchUpInside" id="b9f-4V-Lf5"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -39,18 +54,26 @@
                             <constraint firstItem="pA2-i8-l7j" firstAttribute="top" secondItem="eC9-4L-W92" secondAttribute="bottom" constant="8" symbolic="YES" id="tyF-ly-41K"/>
                         </constraints>
                     </view>
+                    <toolbarItems>
+                        <barButtonItem id="Fq1-jl-VCf">
+                            <connections>
+                                <action selector="LogIn:" destination="98q-KV-EeR" id="YpF-f6-8aB"/>
+                                <segue destination="tHM-Hx-rkg" kind="modal" identifier="login" id="Gti-3Y-VmX"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
                     <navigationItem key="navigationItem" title="Login" id="3Zb-UG-bVh">
                         <barButtonItem key="leftBarButtonItem" title="Register" id="cPd-Qb-Fol">
                             <connections>
                                 <segue destination="hkw-ds-eNS" kind="modal" id="8Sl-yd-ru4"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Login" id="Fq1-jl-VCf">
-                            <connections>
-                                <segue destination="tHM-Hx-rkg" kind="modal" id="Gti-3Y-VmX"/>
-                            </connections>
-                        </barButtonItem>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="PassWord" destination="pA2-i8-l7j" id="zqm-Zv-WXW"/>
+                        <outlet property="UserName" destination="eC9-4L-W92" id="VBX-di-aLX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J80-hu-VFV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -232,12 +255,6 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RHr-mn-bZD">
-                                <rect key="frame" x="125" y="353" width="71" height="30"/>
-                                <state key="normal" title="Subbmit">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IDH-uK-90U">
                                 <rect key="frame" x="8" y="168" width="296" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -273,10 +290,17 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Send Location" id="aoH-ZT-fNE">
-                        <barButtonItem key="leftBarButtonItem" title="Logout" id="4ur-p0-och">
+                    <toolbarItems>
+                        <barButtonItem title="Logout" id="4ur-p0-och">
                             <connections>
                                 <segue destination="t9b-mK-aqm" kind="unwind" unwindAction="unwindToCancel:" id="Exd-bF-kxX"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" title="Send Location" id="aoH-ZT-fNE">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="BX8-aa-FoC">
+                            <connections>
+                                <action selector="Outss:" destination="XQG-m8-fDm" id="aIg-Q7-Dvv"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Submit" id="iMA-IA-1Td">
@@ -285,6 +309,7 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="Fname" destination="yhq-B7-YIy" id="uVt-bM-Cej"/>
                         <outlet property="Lcar" destination="0qj-Tf-moK" id="Bdy-vu-Eps"/>

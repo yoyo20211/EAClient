@@ -31,11 +31,18 @@
 }
 
 
+- (IBAction)LogOut:(id)sender {
+    
+}
+
+- (IBAction)Outss:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 - (IBAction)getCurrentLocation:(id)sender {
     self.locationManager.delegate = self;
     self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-    //[self.locationManager startUpdatingLocation];
+    [self.locationManager startUpdatingLocation];
     
     //CLLocation *currentLocation;
     
